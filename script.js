@@ -61,11 +61,16 @@ const checkWinner = () => {
       showWinner(pos0);
       updateScore(pos0);
       winnerFound = true;
+    if(pos0 == "X"){
+        turnx = false;
+    }
+    else{
+        turnx = true;
+    }
       break;
     }
   }
   if (!winnerFound && count === 9) {
-    console.log("DRAW");
     win.innerText = "DRAW";
     win.classList.remove("hide");
   }
@@ -84,22 +89,9 @@ const updateScore = (winner) => {
 };
 
 const showWinner = (winner) => {
-  // win.innerText = `${winner} won!!`;
-  // win.classList.remove("hide");
-
   win.style.color = turnx ? "#1982C4" : "#FF595E";
   win.innerText = `${winner} WON!!`;
   win.classList.remove("hide");
-
-  // if (turnx == true) {
-  //   win.style.color = "#2082C4";
-  //   win.innerText = `${winner} WON!!`;
-  //   win.classList.remove("hide");
-  // } else if (turnx == false) {
-  //   win.style.color = "#FF605E";
-  //   win.innerText = `${winner} WON!!`;
-  //   win.classList.remove("hide");
-  // }
 };
 
 const enablebox = () => {
@@ -120,6 +112,11 @@ const resetGame = () => {
   turnx = true;
   enablebox();
   win.classList.add("hide");
-  document.body.style.backgroundColor = "#FF595E";
+  if(pos0 == "X"){
+    document.body.style.backgroundColor = "#FF595E";
+  }
+  else{
+    document.body.style.backgroundColor = "#1982C4";
+  }
 };
 reset.addEventListener("click", resetGame);
