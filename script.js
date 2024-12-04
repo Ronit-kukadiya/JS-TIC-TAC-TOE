@@ -112,11 +112,11 @@ const resetGame = () => {
   turnx = true;
   enablebox();
   win.classList.add("hide");
-  if(pos0 == "X"){
-    document.body.style.backgroundColor = "#FF595E";
-  }
-  else{
-    document.body.style.backgroundColor = "#1982C4";
-  }
+  //if(pos0 == "X"){
+  //  document.body.style.backgroundColor = "#FF595E";
+  //}
+  //else{
+  //  document.body.style.backgroundColor = "#1982C4";
+  //}
 };
 reset.addEventListener("click", resetGame);
