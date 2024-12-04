@@ -31,7 +31,6 @@ const wincondi = [
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
-    console.log("box click");
     if (turnx) {
       box.innerText = "X";
       box.style.color = "#FF595E";
@@ -55,18 +54,17 @@ const checkWinner = () => {
     let pos1 = boxes[pattern[1]].innerText;
     let pos2 = boxes[pattern[2]].innerText;
 
-    if (pos0 != "" && pos0 === pos1 && pos1 === pos2) {
+    if (pos0 !== "" && pos0 === pos1 && pos1 === pos2) {
       console.log(pos0 + " is winner");
       disablebox();
       showWinner(pos0);
       updateScore(pos0);
       winnerFound = true;
-    if(pos0 == "X"){
+      if (pos0 == "X") {
         turnx = false;
-    }
-    else{
+      } else {
         turnx = true;
-    }
+      }
       break;
     }
   }
@@ -74,6 +72,12 @@ const checkWinner = () => {
     win.innerText = "DRAW";
     win.classList.remove("hide");
   }
+};
+
+const showWinner = (winner) => {
+  win.style.color = turnx ? "#1982C4" : "#FF595E";
+  win.innerText = `${winner} WON!!`;
+  win.classList.remove("hide");
 };
 
 const updateScore = (winner) => {
@@ -86,12 +90,6 @@ const updateScore = (winner) => {
     score[1].style.color = "#022c46";
     score[1].innerText = `O: ${scorecountO}`;
   }
-};
-
-const showWinner = (winner) => {
-  win.style.color = turnx ? "#1982C4" : "#FF595E";
-  win.innerText = `${winner} WON!!`;
-  win.classList.remove("hide");
 };
 
 const enablebox = () => {
@@ -109,14 +107,13 @@ const disablebox = () => {
 
 const resetGame = () => {
   count = 0;
-  turnx = true;
   enablebox();
   win.classList.add("hide");
-  //if(pos0 == "X"){
-  //  document.body.style.backgroundColor = "#FF595E";
-  //}
-  //else{
-  //  document.body.style.backgroundColor = "#1982C4";
-  //}
+  // if(pos0 == "X"){
+  //   document.body.style.backgroundColor = "#FF595E";
+  // }
+  // else{
+  //   document.body.style.backgroundColor = "#1982C4";
+  // }
 };
 reset.addEventListener("click", resetGame);
