@@ -70,6 +70,24 @@ body {
   transform: translateY(-50%);
 }
 
+@media (max-width: 768px) {
+  .score:first-of-type {
+    background-color: #ff9b9f;
+    position: absolute;
+    left: 3.2rem;
+    top: 80%;
+    transform: translateY(-50%);
+  }
+
+  .score:last-of-type {
+    background-color: #89d1fe;
+    position: absolute;
+    right: 3.2rem;
+    top: 80%;
+    transform: translateY(-50%);
+  }
+}
+
 .msg {
   color: #26ff00;
   font-size: 2rem;
