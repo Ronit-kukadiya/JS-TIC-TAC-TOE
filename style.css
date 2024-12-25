@@ -13,7 +13,10 @@ FFCA3A
 
 .header{
   background-image: linear-gradient(#879a19,#e6ef34);
-  height: 30px;
+  height: 5vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 body {
