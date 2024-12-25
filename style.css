@@ -11,6 +11,11 @@ FFCA3A
   /* background-color: #780a0d; */
 }
 
+.header{
+  background-image: linear-gradient(#879a19,#e6ef34);
+  height: 10vmax;
+}
+
 body {
   background-color: #ff595e;
   text-align: center;
@@ -44,7 +49,7 @@ body {
   font-size: 10vmin;
 }
 
-.score{
+.score {
   height: 18vmin;
   width: 23vmin;
   border-radius: 0.7rem;
@@ -57,7 +62,7 @@ body {
 .score:first-of-type {
   background-color: #ff9b9f;
   position: absolute;
-  left: 2rem; 
+  left: 2rem;
   top: 50%;
   transform: translateY(-50%);
 }
