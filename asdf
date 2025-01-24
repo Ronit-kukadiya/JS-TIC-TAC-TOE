@@ -1,0 +1,18 @@
+  myport.begin(9600);
+  Serial.println("BOARD 2");
+  delay(1000);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  String var;
+  if(Serial.available()>0){
+    var = Serial.readString();
+    myport.println(var);
+  }
+  if(myport.available()>0){
+    String msg;
+    msg = myport.readString();
+    Serial.println(msg);
+  }
+}
